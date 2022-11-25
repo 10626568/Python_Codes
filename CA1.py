@@ -11,8 +11,13 @@ class Employee:
 
     def computeWeeklyPay (self,hours):
         gross_pay = 0
-        gross_pay += (self.rate*hours) + self.weeklytaxcredit
+        if hours > self.weeklyhours:
+            self.weeklytaxcredit = hours-self.weeklyhours
+        else:
+            self.weeklytaxcredit = self.weeklyhours - hours
+        gross_pay += (self.rate*self.weeklyhours) + self.weeklytaxcredit
         if gross_pay <0:
+            print "Gross pay cannot be negative"
             return 0
         return gross_pay
 
@@ -25,6 +30,9 @@ class Employee:
         return tax_due
 
 
-e1 = Employee
-
+e1 = Employee("Rahul",35,11,15,70)
+gross = e1.computeWeeklyPay(39)
+print gross
+tax = e1.computeTax(gross)
+print tax
 
