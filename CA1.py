@@ -31,14 +31,20 @@ class Employee:
         return tax_due
 
 
-Empname = raw_input("Enter your name: ")
-Empweeklyhours = raw_input("Enter your weekly hours: ")
-Emprate = raw_input("Enter your hourly rate: ")
-EmpovertimeRate = raw_input("Enter your overtime rate: ")
-Empweeklytaxcredit = raw_input("Enter your tax credit: ")
-
-e1 = Employee(Empname,Empweeklyhours,Emprate,EmpovertimeRate,Empweeklytaxcredit)
-gross = e1.computeWeeklyPay(39)
-print "Gross Pay of "
-tax = e1.computeTax(gross)
-
+ch = "y"
+i = 0
+object_array = []
+while ch =='yes' or ch =='y':
+    Empname = raw_input("Enter your name: ")
+    Empweeklyhours = raw_input("Enter your weekly hours: ")
+    Emprate = raw_input("Enter your hourly rate: ")
+    EmpovertimeRate = raw_input("Enter your overtime rate: ")
+    Empweeklytaxcredit = raw_input("Enter your tax credit: ")
+    e1 = Employee(Empname,int(Empweeklyhours),int(Emprate),int(EmpovertimeRate),int(Empweeklytaxcredit))
+    object_array[i] = e
+    gross = e1.computeWeeklyPay(39)
+    print "Gross Pay of " + Empname + " is " + str(gross)
+    tax = e1.computeTax(gross)
+    print "Calculated Tax value is " + str(tax)
+    i = i + 1
+    ch = raw_input("Press yes/y to enter more employees else enter quit/q")
