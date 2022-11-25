@@ -10,8 +10,7 @@ class Employee:
         self.overtimeRate = overtimeRate
         self.weeklytaxcredit = weeklytaxcredit
         if self.overtimeRate < 0 or self.weeklyhours < 0 or self.rate < 0 or self.weeklytaxcredit < 0:
-            print("Invalid Weeklyhours,Rate,OvertimeRate or Weeklytaxcredit value")
-            return
+            raise Exception("Invalid_VALUE: Invalid Weeklyhours,Rate,OvertimeRate or Weeklytaxcredit value")
 
     def computeWeeklyPay (self,hours):
         gross_pay = 0
@@ -22,16 +21,14 @@ class Employee:
         weeklytaxcredit *= self.overtimeRate
         gross_pay += (self.rate*self.weeklyhours) + weeklytaxcredit
         if gross_pay <0:
-            print "Gross pay cannot be negative"
-            return 0
+            raise Exception("Gross pay cannot be negative")
         return gross_pay
 
     def computeTax(self,grossPay):
         tax_due = 0
         tax_due += (grossPay * 0.4) - self.weeklytaxcredit
         if tax_due < 0:
-            print("Tax value cannot be negative")
-            return 0
+            raise Exception("Tax value cannot be negative")
         return tax_due
 
 
