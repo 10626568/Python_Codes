@@ -1,3 +1,7 @@
+# https://github.com/Anirudh-Chandran/Python_Codes.git
+# Coded by Anirudh C
+# Student ID: 10626568
+
 class Employee:
     def __init__(self,name, weeklyhours, rate, overtimeRate, weeklytaxcredit):
         self.name = name
