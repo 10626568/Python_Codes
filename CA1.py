@@ -32,8 +32,7 @@ class Employee:
 
 
 ch = "y"
-i = 0
-object_array = []
+object_list = []
 while ch =='yes' or ch =='y':
     Empname = raw_input("Enter your name: ")
     Empweeklyhours = raw_input("Enter your weekly hours: ")
@@ -41,10 +40,9 @@ while ch =='yes' or ch =='y':
     EmpovertimeRate = raw_input("Enter your overtime rate: ")
     Empweeklytaxcredit = raw_input("Enter your tax credit: ")
     e1 = Employee(Empname,int(Empweeklyhours),int(Emprate),int(EmpovertimeRate),int(Empweeklytaxcredit))
-    object_array[i] = e
+    object_list.append(e1)
     gross = e1.computeWeeklyPay(39)
     print "Gross Pay of " + Empname + " is " + str(gross)
     tax = e1.computeTax(gross)
     print "Calculated Tax value is " + str(tax)
-    i = i + 1
-    ch = raw_input("Press yes/y to enter more employees else enter quit/q")
+    ch = raw_input("Press yes/y to enter more employees else enter quit/q:  ")
