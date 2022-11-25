@@ -1,4 +1,2 @@
 # Python_Codes
-Repo to maintain the Python Codes
-
-I am making a change
+Repo to maintain the Python CA Code.
